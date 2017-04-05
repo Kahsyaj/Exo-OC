@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--Balise d'encodage de a page, préférer utf-8-->
+		<meta name="viewport" content="width=device-width" />
+		<!--Permet de modifier la taille du viewport pour navigateur mobile, ici égal à la largeur d'écran-->
+		<link rel="stylesheet" href ="CSS/test.css" />
+		<!--Balise faisant le lien entre la page html et la page CSS-->
+		<link rel="stylesheet" media="screen and (max-width: 1280px)" href="autre_feuille_CSS.css" />
+		<!--Permet de charger une autre feuille via requète média (média querries). 1ere méthode-->
+		<title>Mon titre</title>
+	</head>
+	<body>
+		<h1 id="Mon_Ancre">Très grand titre</h1>
+		<!--balises titre de h1 à h6-->
+		<p class="paragraphe1">Paragraphe<br />
+		<!--L'attribut class est un sélécteur, faire suivre du nom d'identification.
+			L'attribut id est comme class mais il peut être attribué qu'une seule fois sur une page (cf : js/ logo)-->
+		Suite après retour à la ligne <em>Texte en valeur </em><strong>Texte important </strong><mark>Texte à faire ressortir</mark></p>
+		<p>
+			<ul>
+			<!--Début de liste non organisée-->
+				<li>Elément de liste</li>
+				<li>Autre élément de liste</li>
+			</ul>
+			<ol>
+			<!--Début de liste organisée/numerotée-->
+				<li>Elément de liste</li>
+				<li>Autre élément de liste</li>
+			</ol>
+
+		<div class="block">
+			<a href="http://google.fr/" target="_blank">Lien vers Google ouverture forcée sur un nouvel onglet ou une nouvelle page</a>
+			<a href="page2.html" title="Message s'affichant au survol du lien">Lien vers la page 2 (dans le même dossier)</a>
+			<a href="#Mon_Ancre">Lien vers mon ancre (ici au très grand titre)</a>
+			<a href="page2.html#Ancre_page2">Lien vers mon ancre de la page 2</a>
+			<a href="maito:mon.adresse.email@quelquechose.com">Lien pour m'envoyer un e-mail</a>
+			<a href="dossier/fichier.zip">Lien pour télécharger le fichier "fichier.zip" de "dossier"</a>
+		</div>
+		<!--La balise div fonctionne comme la balise <span>, c'est un sélécteur mais elle est de type bloc-->
+
+		<figure>
+			<img src="img/image.png" alt="Mon image" title="Info bulle de l'image"/>
+			<!--Format jpeg pour les photos-->
+			<figcaption>Legende de la figure (image illustrée d'un texte qui apporte une information peut être mis hors "<p></p>")</figcaption>
+		</figure>
+		<a href="photo.jpeg"><img src="photo_miniature.jpeg" alt="photo miniature" title="Cliquez pour agrandir"/></a>
+		<p>
+			<span class="inline">Texte séléctionné avec balise universelle (type inline)</span> suite de texte non séléctionné.
+		</p>
+
+		<p><img class="flottant" src="image_flottante.png" alt="Image flottante" />Texte continuant sur le coté du flottant.</p>
+		<p class="dessous_flottant">Texte à continuer non pas sur le coté du flottant mais en dessous.</p>
+
+
+	</body>
+</html>
