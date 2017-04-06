@@ -1,0 +1,173 @@
+p, h1 /*Séléction de balise*/
+{
+	color: blue; /*propriété: attribut;
+	Change la couleur du texte en bleu, notation hexadécimale (#), notation RGB (rgb(240, 40, 10);) également possible*/
+}
+
+.paragraphe1 /*Séléction via attribut class*/
+{
+	font-size: 5px; /*Change la taille du texte à 5 pixels (possible en cm, mm, em ou de xx-small à xx-large)*/
+	opacity: 0.5; /*Transparence de 50% sur l'élément, 1 par defaut.*/
+}
+
+#nomid /*Séléction via attribut id*/
+{
+	font-family: police1, "Arial Black", Sherif; /*Change la police du texte, en mettre plusieurs afin que la suivante soit utilisée par defaut*/
+}
+
+@font-face /*Permet d'importer une police*/
+{
+	font-family: 'MaPolice'; /*Importe la police 'MaPolice'. Chemin des fichiers suivants à spécifier si autre dossier (dossier/fichier)*/
+	src: url('MaPolice.ttf'), /*Format supporté par IE9 et autres navigateurs*/
+		 url('MaPolice.eot'), /*Format supporté uniquement par IE*/
+		 url('MaPolice.otf'), /*Format non supporté par IE*/
+		 url('MaPolice.svg'), /*Format supporté par apple (safari)*/
+		 url('MaPolice.woff'); /*Nouveau format, supporté par IE et les autres navigateurs*/
+}
+
+* /*Sélécteur universel, il séléctionne toutes les balises*/
+{
+	font-style: italic; /*Met le texte en italique, autres valeurs: oblic (ressemble à italic) et normal (par défaut)*/
+}
+
+p h1 /*Séléctionne les balises <h1> contenues dans des balises <p>*/
+{
+	font-weight: bold; /*Met le texte en gras (normal par defaut)*/
+	border: 2px black solid; /*Crée une bordure de 2 pixels, noire, simple*/
+	/*Possibilités pour les bordures : dotted (pointillés), dashed (tirets), double, groove et ridge (3D), inset et outset (effet de profondeur)*/ 
+	/*Grace à border-top/left/right/bottom il est posssible d'avoir différentes bordures*/
+	border-radius: 10px; /*Arrondit les bordures (possibilité border-top-left-radius ect... ou border xpx xpx xpx xpx;)*/
+	box-shadow: 2px 2px 2px black; /*Crée une ombre de 2px de décalage horizontalement et verticalement avec un adoucissement de 2px noire*/ 
+	text-shadow: 2px 2px 2px black; /*Crée une ombre de texte idem box-shadow*/
+}
+
+p + h1 /*Séléctionne la premiere balise <h1> située apres une balise <p>*/
+{
+	text-decoration: underline; /*Souligne le texte, autres valeurs: over-line (ligne au dessus), line-through (barré), blink (clignotant)*/
+}
+
+a[attribut] /*Séléctionne les liens <a> qui ont l'attribut "attribut"*/
+{
+	text-align: left; /*Aligne le texte à gauche, autres valeurs: right, center, justify (Occupe tout l'espace disponible façon journaux)*/
+}
+
+a[attribut="valeur"] /*Séléctionne les liens <a> avec l'attribut "attribut" et la valeur "valeur"*/
+{
+	background-color: couleur; /*Change la couleur de fond, fonctionne comme la propriété color*/
+}
+
+.flottant
+{
+	float: left; /*Fait flotter une image sur la gauche, autre valeur: right, le texte se retrouve à coté*/
+}
+
+.dessous_flottant 
+{
+	clear: both; /*Fait continuer le texte (séléctionné) en dessous du flottant*/
+}
+
+body
+{
+	background-image: url("img/image.png"); /*Applique une image de fond à un élément*/
+	background-attachment: fixed; /*Fixe l'image, le texte glisse sur le fond? autre valeur: scroll (défaut)*/
+	background-repeat: no-repeat; /*Etale l'image pour qu'elle prenne tout l'espace, par défaut (repeat) l'image est affichée en mosaïque*/
+	background-position: top; /*Change la disposition du fond, autres valeurs: bottom, left, right, center, xpx xpx;*/
+	/*Possibilité d'utiliser la propriété background combinée avec les valeurs souhaitées (background: url("image.png") fixed no-repeat center;)*/
+}
+
+:hover /*Modifie l'apparence des liens survolés*/
+{
+	display: inline-block; /*La propriété display permet de changer de type un élément (block/inline), autres valeurs: block, inline, none*/
+	vertical-align: middle; /*Modifie l'aignement vertical d'un élément de type inline-block, autres valeurs: baseline (defaut), top, bottom*/
+	position: absolute; /*Permet de donner une position absolue à un élément, autres valeurs: fixed, relative*/
+	right: 5px; /*Détaille la position absole en pixels, autres propriétés: left, top, bottom*/
+	z-index: 1; /*Lors du positionnement absolu, les éléments peuvent se chevaucher, z-index définit quel élément aparaît au dessus (+ élévé)*/
+}
+
+:active /*Modifie l'apparence des liens lors du clic*/
+{
+
+}
+
+:focus /*Modifie l'apparence des liens au survol*/
+{
+
+}
+
+:visited /*Modifie l'apparence des liens visités*/
+{
+
+}
+
+article
+{
+	width: 50%; /*Modifie la largeur d'un bloc, exprimé en % ou px*/
+	min-width: 500px; /*Exige une largeur minimum de 500 pixels, autre propriétée : max-width*/
+	height: 50%; /*Modifie la hauteur d'un bloc, exprimé en % ou px*/
+	min-height: 500px; /*Exige une largeur minimum de 500 pixels, autre propriétée : max-height*/
+	padding: 10px; /*Modifie la marge interieure du bloc, autres propriétées: padding-left/right/top/bottom: */
+	margin: 10px; /*Mofidie la marge extérieure du bloc (valeur auto pour centrer), autres propriétées: margin-left/righ/top/bottom: */
+}
+
+aside
+{
+	overflow: auto; /*Permet de gerer automatiquement le depassement du texte dans un bloc, autres valeurs: visible (defaut), hidden, scroll*/
+	word-wrap: break-word; /*Permet de forcer la césure d'un mot trop long qui depasse du block*/
+}
+
+#contenaire
+{
+	display: flex; /*Crée un conténaire flex permettant de modifier l'affichage des elements qu'il contient*/
+	flex-direction: row; /*Modifie la disposition des éléments du conténaire, autres valeurs: column, column-reverse, raw-reverse*/
+	flex-wrap: wrap; /*Par défaut les éléments vont rester sur la meme ligne, wrap permet de mettre les blocs en dessous s'il n'y a pas assez d'espace, autres valeurs : no-wrap, wrap-reverse*/
+	justify-content: flex-start; /*Permet d'aligner les élément sur l'axe principal, autres valeurs: flex-end, center, space-between, space-arrond*/
+	align-items: flex-start; /*Permet d'aligner les éléments sur l'axe secondaire, autres valeurs : stretch (défaut), flex-end, center, baseline*/
+	align-content: flex-start; /*Permet d'organiser tous les éléments d'un container, autres valeurs: space-between, space-arround, center, flex-end, stretch*/
+}
+
+.element:nth-child(2) /*Séléction du deuxième élément flex*/
+{
+	align-self: flex-start; /*Aligne un seul élément, autres valeurs: flex-end, center, baseline, stretch*/
+	flex: 1; /*Définit la taille d'un élément*/
+}
+
+.element:nth-child(1) /*Séléction du premier élément*/
+{
+	order: 1; /*Permet de mofifier l'ordre d'affichage des éléments sans changer le code html*/
+	flex: 2; /*Définit la taille d'un élément (ici 2x plus grand que l'élément numero 2)*/
+}
+
+li
+{
+	list-style: none; /*Supprime les puces de la liste à puces*/
+}
+
+td, th
+{
+	border: 1px black solid;
+}
+
+table
+{
+	border-collapse: collapse; /*Permet de coller les bordures d'un tableau*/
+	caption-side: bottom; /*Modifie l'affichage du titre du tableau, autre valeur : top (défaut)*/
+}
+
+:required
+{
+	background-color: red;
+}
+
+@media screen and (max-width: 1280px)
+/*Différentes règles des média querries: color, height, width, device-height, device-width, orientation, 
+media (screen, handheld, print, tv, projection, all). préfixes min et max utilisables, mot de combinaisons possibles:
+and, only, not*/
+{
+	/*Requête média directement dans le fichier CSS, écrire ensuite ses propriétés entre les "{}"*/
+}
+
+@media all and (max-device-width: 480px)
+/*Requete média pour les appareils mobile*/
+{
+    /* Vos règles CSS pour les mobiles ici */
+}
