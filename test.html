@@ -115,6 +115,75 @@
 				</tr>
 			</tfoot>
 		</table>
+		
+		<form method="post" action="page.php">
+			<p>Texte à l'interieur du formulaire, obligatoirement entre balises "<p></p>"
+			<label for="Pseudo">Pseudo</label> : <input type="text" name="Pseudo" id="Pseudo" size="30" maxlength="15" placeholder="Ecrire votre pseudo ici."/>
+			<label for="pswd">Mot de passe</label> : <input type="password" name="pswd" id="pswd" placeholder="Ecrire votre mot de passe ici."/>
+			<!--Zone d'insertion de texte monoligne-->
+			<label for="Avis">Avis</label> : <input type="text" name="Avis" id="Avis" value="Positif !" />
+			<label for="Multi">Zone de texte mutiligne</label> : <textarea name="Multi" id="Multi">Texte par défaut sans besoin d'atribut value. La taille peut être modifiée via CSS ou attributs cols et rows.</textarea>
+
+			<!--Zones de texte enrichie-->
+			<input type="email" required/>  <!--Required rend le champ obligatoire-->
+			<input type="url" autofocus/> <!--Autofocus permet de pointer le pointeur sur le champ url au chargement de la page-->
+			<input type="tel" />
+			<input type="number" min="0" max="100" step="1" /> <!--Liste déroulante de nombres allant de 0 à 100 de 1 en 1-->
+			<input type="range" min="0" max="100" step="1" /> <!--Curseur idem au dessus-->
+			<input type="color" />
+			<input type="date" /> <!--Autres types : time, week, month, datetime, datetime-local-->
+			<input type="search" />
+			</p>
+			<p>
+			<!--Elements d'options-->
+			Animaux préférés<br />
+			<input type="checkbox" name="Serpent" id="Serpent" checked /><label for="Serpent">Serpent</label><br />
+			<input type="checkbox" name="Chien" id="Chien" /><label for="Chien">Chien</label><br />
+			<input type="checkbox" name="Cheval" id="Cheval" /><label for="Cheval">Cheval</label><br />
+			<!--Zone de cases à cocher à choix multiples-->
+			</p>
+			<p>
+			Quel est votre tranche d'age<br />
+			<input type="radio" name="age" value="Moins de 15" id="Moins de 15" /><label for="Moins de 15">Moins de 15</label><br />
+			<input type="radio" name="age" value="Entre 16 et 24" id="Entre 16 et 24" /><label for="Entre 16 et 24">Entre 16 et 24</label><br />
+			<input type="radio" name="age" value="Entre 25 et 35" id="Entre 25 et 35" /><label fot="Entre 25 et 35">Entre 25 et 35</label><br />
+
+			<label for="pays">Dans quel pays habitez vous ?</label>
+			<select name="pays" id="pays">
+					<optgroup label="Europe">
+					<option value="France" selected>France</option>
+					<option value="Angleterre">Angleterre</option>
+					<option value="Espagne">Espagne</option>
+					<option value="Alllemagne">Allemagne</option>
+				</optgroup>
+				<optgroup label="Amerique du Nord">
+					<option value="Canada">Canada</option>
+					<option value="Etats Unis">Etats Unis</option>
+				</optgroup>
+			</select>
+			<!--Liste déroulante d'options, regroupés par label. Pour un choix par defaut, utiliser l'attribut selected-->
+			</p>
+
+			<fieldset>
+				<legend>Titre de la boite formulaire</legend>
+			</fieldset>
+
+			<p><input type="submit" value="Envoyer le formulaire" />
+			<input type="reset" value="Remise à zero du formulaire" />
+			<input type="image" src="img.jpg" /></p>
+		</form>
+
+		<audio src="musique.mp3" controls width="200" height="50" autoplay autoload="auto">Message a afficher en cas d'incompatibiité (maj navigateur ect...)</audio>
+
+		<video src="vidéo.mp4" poster="image_préchargée_pour_la_vidéo.jpeg" controls width="100" height="100" loop autoplay>
+		Message a afficher en cas d'incompatibiité (maj navigateur ect...)</video>
+
+		<video controls poster="sintel.jpg" width="600">
+    		<source src="sintel.mp4">	
+    		<source src="sintel.webm">
+    		<source src="sintel.ogv">
+		</video>
+		<!--Insertion d'une vidéo muti-sources pour plus de compatibilité-->
 
 	</body>
 </html>
